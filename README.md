@@ -19,32 +19,25 @@ Thank you 😃
 
 # Raptor Lake Hackintosh EFI
 
-![RaptorLake Hackintosh - About this Mac](docs/sonoma_about_this_mac.png)
-![RaptorLake Hackintosh - Neofetch](docs/sonoma_neofetch.png)
+![image](https://github.com/user-attachments/assets/a8894bcf-e9d4-49d0-96e7-fae14bcf15ad)
+
 
 ## What is this
 
-This repository contains the EFI directory of Intel RaptorLake i7-13700K and Gigabyte B760M Aorus Elite combo, with somewhat diverse additional components.
+This repository contains the EFI directory of Intel RaptorLake i5-13490F and Gigabyte B760M Aorus Elite AX5 combo, with somewhat diverse additional components.
 
 ## Specification of my computer
 
 | Component    | Product Name                                     | Note                                           |
 |--------------|--------------------------------------------------|------------------------------------------------|
-| CPU          | Intel 13th Gen Core i7-13700K                    | Undervolting by 0.170 V                        |
-| Mainboard    | Gigabyte B760M Aorus Elite                       | F15 BIOS                                       |
-| Memory       | Samsung DDR5 5600MHz 16GB 2EA                    |                                                |
-| Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
-| NVMe 1       | Samsung 980 PRO 1TB                              | macOS 14 installed                             |
-| NVMe 2       | RevuAhn NX2300 1TB                               | KDE neon installed                             |
-| SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
+| CPU          | Intel 13th Gen Core i5-13490F                    |                        |
+| Mainboard    | Gigabyte B760M Aorus Elite AX5                      |                                    |
+| Memory       | KingSton DDR5 4800MHz 16GB 2EA                    |                                                |
+| Graphics     | AMD Radeon RX 5500 XT 8GB GDDR6 RAW II Ultra |       |
+| NVMe 1       | SanDisk 240G                              | macOS 14 installed                             |
+| NVMe 2       | Fanxiang S790 1TB                              | Windows 11 installed                             |
 | BT/WIFI      | Fenvi AXE3000 Pro                                | Intel AX210NGW                                 |
-| PSU          | Antec EAG PRO 750W 80PLUS GOLD Modular           |                                                |
-| CPU Paste    | Thermalright TFX                                 |                                                |
-| CPU Cooler   | DEEPCOOL LS720 ARGB Black                        |                                                |
-| MEM Cooler   | LEADCOOL RH-1 EVO ARGB Black                     |                                                |
-| Case         | darkFlash DNM600 MAX MESH RGB Black              |                                                |
-| USB DAC      | Audinst HUD-DX1 Blue24                           |                                                |
-| USB MIC      | Blue Yeti X                                      |                                                |
+
 
 ### Geekbench 6 benchmark results
 
