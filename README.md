@@ -43,12 +43,12 @@ This repository contains the EFI directory of Intel RaptorLake i5-13490F and Gig
 
 > Performed only one time right after it boots. The score isn't important for me 🙂
 
-- [CPU](https://browser.geekbench.com/v6/cpu/4013023)
-  - Single-core **2784**
-  - Multi-core **16459**
+- [CPU](https://browser.geekbench.com/v6/cpu/9297937)
+  - Single-core **2205**
+  - Multi-core **12228**
 - GPU
-  - [OpenCL](https://browser.geekbench.com/v6/compute/1451249) **72390**
-  - [Metal](https://browser.geekbench.com/v6/compute/1451256) **109462**
+  - [OpenCL](https://browser.geekbench.com/v6/compute/3278140) **38502**
+  - [Metal](https://browser.geekbench.com/v6/compute/3278132) **58712**
 
 ## EFI structure
 
@@ -75,21 +75,6 @@ In my setup, I disabled **Above 4G Decoding** in my BIOS and added `npci=0x2000`
 
 If you want to use my EFI setup, you have to check whether this option enabled or not, if you want to enable **Above 4G Decoding** then you should remove that `npci=0x2000` arguments from the `boot-args`.
 
-#### Radeon RX 5700 XT gets freezing sometimes
-
-In my system, sometimes it suddenly freezes excepts mouse cursor, and the windows on desktop very stutters annoyingly.
-
-I caught the kernel message when the error comes to occur and I tried everything I could do but couldn't fix it.
-
-![RX5700XT kernel panic](docs/5700xt_kernel_panic.png)
-
-Fortunately I found that [there are some other people that suffering from this issue](https://www.reddit.com/r/hackintosh/comments/m1urqd/5700xt_freezing_issue/) too.
-
-> Yes, this issue does exist in [my previous Ryzentosh system](https://github.com/awesometic/hackintosh-gigabyte-x570-aorus-elite) too.
-
-After so many searches I found that some people using Radeon dGPU on their Hackintosh [spoof his GPU to Radeon Pro one](https://www.tonymacx86.com/threads/macos-12-3-update-causes-problems-for-5700-6800-6900-graphics-cards.319421/page-14#post-2312916) by editing `config.plist` file. I gave it a shot, and it seems like working for me too, no kernel panic since I applied this spoofing.
-
-Here is very important caution for those who wants this `config.plist` file with only essential edits. You must check the **GPU PCI path** using [Hackintool](https://github.com/benbaker76/Hackintool) or something, and edit the `DeviceProperties` part of my configs to yours. Otherwise the framebuffer won't init well so you will see only the black screen after boot.
 
 ### OpenCore
 
