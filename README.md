@@ -1,13 +1,11 @@
-# ARCHIVED
 
-<details>
   <summary><i>写在前面</i></summary>
 原来自己东拼西凑弄的，休眠问题一直没有解决，需要对DSDT修复，太麻烦了。后来看到Git上韩国小哥找人做了aml文件，就直接拿过来试用了一下，发现已修复休眠问题，但他的kext文件可能由于版本问题，一进桌面就重启，就把最新版本无线网卡和蓝牙相关的文件替换，形成最终的版本。目前除了单向空投外，其它声卡网卡显卡等都完美黑化。
 
 韩国小哥Git仓库地址：(https://github.com/awesometic/hackintosh-gigabyte-b760m-aorus-elite)
 
 为照顾其他水友装黑，特共享出来，我的硬件配置在下节。
-</details>
+
 
 # Raptor Lake Hackintosh EFI
 
@@ -72,7 +70,7 @@ DP无内容，通过Boot-Args实现了5500XT免驱
 
 In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep my personal information safe.
 
-记得要重新乱Platform相关信息，出于安全考虑，这块的信息已经被`EDIT_TEXT`替换，请特别注意。
+记得要重新生成Platform相关信息，出于安全考虑，这块的信息已经被`EDIT_TEXT`替换，请特别注意。
 
 So if you are going to use this, you have to make sure that the `EDIT_HERE` texts are changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you are about to generate one, you should select `iMacPro1,1` to properly use your machine.
 
