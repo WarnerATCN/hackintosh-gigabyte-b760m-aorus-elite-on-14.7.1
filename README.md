@@ -1,20 +1,12 @@
 # ARCHIVED
 
 <details>
-  <summary><i>I think...</i></summary>
-  
-Since Apple uses its own hardware, the Apple silicon, Apple reduces the support of the old hardware such as Broadcom WiFi/BT chipset.
+  <summary><i>写在前面</i></summary>
+原来自己东拼西凑弄的，休眠问题一直没有解决，需要对DSDT修复，太麻烦了。后来看到Git上韩国小哥找人做了aml文件，就直接拿过来试用了一下，发现已修复休眠问题，但他的kext文件可能由于版本问题，一进桌面就重启，就把最新版本无线网卡和蓝牙相关的文件替换，形成最终的版本。目前除了单向空投外，其它声卡网卡显卡等都完美黑化。
 
-This makes the machine not that flawlessly work as much as the native one does, so as far as I know all the Hackintosh machines using macOS 14 have a minor bug even if it is not that noticeable.
+韩国小哥Git仓库地址：(https://github.com/awesometic/hackintosh-gigabyte-b760m-aorus-elite)
 
-> Maybe it is not, there could be someone who uses a perfect Hackintosh with macOS 14, if so you can find him.
-
-So I think The bugs will increase as time goes on, and it is definite unless Apple starts to support Intel CPU again 😓
-
-For this reason, I gave up Hackintosh-ing my main machine and will stop maintaining this Hackintosh EFI repo.
-
-Thank you 😃
-
+为照顾其他水友装黑，特共享出来，我的硬件配置在下节。
 </details>
 
 # Raptor Lake Hackintosh EFI
