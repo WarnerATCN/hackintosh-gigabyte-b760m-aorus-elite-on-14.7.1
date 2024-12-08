@@ -23,12 +23,15 @@ This repository contains the EFI directory of Intel RaptorLake i5-13490F and Gig
 | Component    | Product Name                                     | Note                                           |
 |--------------|--------------------------------------------------|------------------------------------------------|
 | CPU          | Intel 13th Gen Core i5-13490F                    |                        |
-| Mainboard    | Gigabyte B760M Aorus Elite AX5                      |                                    |
+| Mainboard    | Gigabyte B760M Aorus Elite AX D5                      |                                    |
 | Memory       | KingSton DDR5 4800MHz 16GB 2EA                    |                                                |
 | Graphics     | AMD Radeon RX 5500 XT 8GB GDDR6 RAW II Ultra |       |
 | NVMe 1       | SanDisk 240G                              | macOS 14 installed                             |
 | NVMe 2       | Fanxiang S790 1TB                              | Windows 11 installed                             |
-| BT/WIFI      | Fenvi AXE3000 Pro                                | Intel AX210NGW                                 |
+| BT/WIFI      | Intel(R) Wi-Fi 6E AX211 160MHz                                | Intel AX211                              |
+| Network      | Realtek Gaming 2.5GbE Family Controller    |RTL8125         |
+| Audio         | Realtek High Definition Audio              | ALC892         |
+
 
 
 ### Geekbench 6 benchmark results
@@ -50,11 +53,26 @@ This repository contains the EFI directory of Intel RaptorLake i5-13490F and Gig
   - Obviously, this build may not be the best one
   - This EFI contains additional kexts in **config.plist** rather than only the essential things for B760M + RaptorLake CPU. You should remove them before using this on your PC
 
+ACPI相关：
+
+![image](https://github.com/user-attachments/assets/5e596243-9b12-4576-8e00-754aa9fb1000)
+
+
+Booter无内容
+
+DP无内容，通过Boot-Args实现了5500XT免驱
+
+
 ### Check this before you use
+
+![image](https://github.com/user-attachments/assets/fc58dcf1-ded8-4938-8339-baab5484576a)
+
 
 #### Generate your platform information
 
 In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep my personal information safe.
+
+记得要重新乱Platform相关信息，出于安全考虑，这块的信息已经被`EDIT_TEXT`替换，请特别注意。
 
 So if you are going to use this, you have to make sure that the `EDIT_HERE` texts are changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you are about to generate one, you should select `iMacPro1,1` to properly use your machine.
 
@@ -76,6 +94,8 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 
 - MaLd0n.aml - Such like AIO method to fix everything including IRQ, PM, RTC, EC, ...
   - [Olarila.com by MaLd0n](https://www.olarila.com/topic/25111-hackintosh-efi-folders-with-opencore-mod/)
+  
+PS: 有了这个，主板包括休眠相关的问题都可以解决。
 
 ### Drivers
 
@@ -86,11 +106,12 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 
 ### Kexts
 
+
 #### Generic kext patcher
 
 > https://github.com/acidanthera/Lilu
 
-- Lilu.kext
+- Lilu.kext [必须的]
 
 #### Improve overall stability and patch CPU name
 
@@ -112,6 +133,8 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 - SMCProcessor.kext
 - SMCSuperIO.kext
 
+[必须的]
+
 #### Improve NVMe stability
 
 > https://github.com/acidanthera/NVMeFix
@@ -124,17 +147,23 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 
 - WhateverGreen.kext
 
+[必须的]
+
 #### Fix audio ports
 
 > https://github.com/acidanthera/AppleALC
 
 - AppleALC.kext
 
+[声卡必须的]
+
 #### Fix RTL8125 Ethernet
 
 > https://github.com/Mieze/LucyRTL8125Ethernet
 
 - LucyRTL8125Ethernet.kext
+
+  [有线网卡必须的]
 
 #### Fix WiFi/Bluetooth
 
@@ -143,7 +172,11 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 - Airportltlwm.kext
 - BlueToolFixup.kext
 - IntelBluetoothFirmware.kext
+- IntelBluetoothInjector.kext
 - IntelBTPatcher.kext
+- AirportBrcmFixup.kext
+- 
+[蓝牙必须的]
 
 #### Sensor for Radeon GPU
 
@@ -162,18 +195,13 @@ If you want to use my EFI setup, you have to check whether this option enabled o
 
 - OpenShell.efi
 
-## What works and what doesn't work
+NVRAM：
 
-### Works
+注意： agdpmod=pikera 实现AMD的5500XT免驱，不需要其它地方调整。
 
-- Everything excepts ...
+![image](https://github.com/user-attachments/assets/af4f15c3-6804-40e6-83cc-a41f448cad26)
 
-### Doesn't work
 
-- Apple continuity
-  - Currently AX210 WiFi supports on macOS is immature yet
-  - Sadly, Fenvi T919 (BCM94360) doesn't work on Sonoma
-    - Seems like there is workaround but not stable, [check this post](https://www.reddit.com/r/hackintosh/comments/170q5wu/enable_wifi_in_sonoma_with_fenvi_t919/)
 
 ## Refer to this as much as you want
 
