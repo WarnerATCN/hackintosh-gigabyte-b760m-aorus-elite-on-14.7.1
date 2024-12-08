@@ -23,7 +23,7 @@ This repository contains the EFI directory of Intel RaptorLake i5-13490F and Gig
 | CPU          | Intel 13th Gen Core i5-13490F                    |                        |
 | Mainboard    | Gigabyte B760M Aorus Elite AX D5                      |                                    |
 | Memory       | KingSton DDR5 4800MHz 16GB 2EA                    |                                                |
-| Graphics     | AMD Radeon RX 5500 XT 8GB GDDR6 RAW II Ultra |       |
+| Graphics     | AMD Radeon RX 5500 XT 8GB GDDR6 |       |
 | NVMe 1       | SanDisk 240G                              | macOS 14 installed                             |
 | NVMe 2       | Fanxiang S790 1TB                              | Windows 11 installed                             |
 | BT/WIFI      | Intel(R) Wi-Fi 6E AX211 160MHz                                | Intel AX211                              |
